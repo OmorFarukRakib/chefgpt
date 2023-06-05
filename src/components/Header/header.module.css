@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.header-wrapper{
+    text-align: center;
+    font-family: 'Montserrat', cursive;
+    color: rgb(247, 150, 4);
+    display: flex;
+    justify-content: center;
+}
+
+.header-wrapper > img {
+    width: 6rem;
+}
+
+.header-title-wrapper{
+    
+    font-size: 3rem;
+}
+.header-subtitle-wrapper{
+    font-size: 1rem;
+
+}

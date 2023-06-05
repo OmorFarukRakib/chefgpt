@@ -6,6 +6,7 @@ import { Button } from "@mui/material";
 import RecipeText from "./../RecipeText/RecipeText";
 import Instruction from "../Instruction/Instruction";
 import ChefThinkingLoading from "../ChefThinkingLoading/ChefThinkingLoading";
+import Header from "../Header/Header";
 function MainBody() {
   const inputRef = useRef(null);
   const [ingredients, setIngredients] = useState("");
@@ -49,47 +50,51 @@ function MainBody() {
   };
 
   return (
-    <div>
+    <>
       {submitLoading ? (
         <div>
           <ChefThinkingLoading />
         </div>
       ) : null}
-
-      <div className={styles["input-rules-box-wrapper"]}>
-        <Instruction />
+      <div className={styles["mainBody-wrapper"]}>
+        <Header />
+        <div className={styles["input-rules-box-wrapper"]}>
+          <Instruction />
+        </div>
+        <div className={styles["search-box-wrapper"]}>
+          <TextField
+            id="outlined-basic"
+            label="Ingredients"
+            variant="outlined"
+            type="search"
+            placeholder="Example: rice, tomato, potato"
+            fullWidth
+            value={ingredients}
+            onChange={(e) => setIngredients(e.target.value)}
+            onKeyDown={handleKeyDown}
+            disabled={submitLoading}
+          />
+          <Button
+            id="myButton"
+            onClick={fetchRecipeData}
+            disabled={submitLoading || !ingredients}
+            size="large"
+          >
+            {submitLoading === true
+              ? "Creating your recipe"
+              : ingredients
+              ? "Create my recipe"
+              : "Input your ingredients"}
+            {/* {submitLoading === true ? "Creating your recipe" : "Get my recipes"} */}
+          </Button>
+        </div>
+        <div>
+          {/* {recipe && <p>{JSON.stringify(recipe)}</p>} */}
+          {recipe && <RecipeText text={recipe} />}
+          {error && <p>Error: {error.message}</p>}
+        </div>
       </div>
-      <div className={styles["search-box-wrapper"]}>
-        <TextField
-          id="outlined-basic"
-          label="Ingredients"
-          variant="outlined"
-          type="search"
-          placeholder="Example: rice, tomato, potato"
-          fullWidth
-          value={ingredients}
-          onChange={(e) => setIngredients(e.target.value)}
-          onKeyDown={handleKeyDown}
-        />
-        <Button
-          id="myButton"
-          onClick={fetchRecipeData}
-          disabled={submitLoading || !ingredients}
-        >
-          {submitLoading === true
-            ? "Creating your recipe"
-            : ingredients
-            ? "Create my recipe"
-            : "Input your ingredients"}
-          {/* {submitLoading === true ? "Creating your recipe" : "Get my recipes"} */}
-        </Button>
-      </div>
-      <div>
-        {/* {recipe && <p>{JSON.stringify(recipe)}</p>} */}
-        {recipe && <RecipeText text={recipe} />}
-        {error && <p>Error: {error.message}</p>}
-      </div>
-    </div>
+    </>
   );
 }
 
