@@ -1,0 +1,12 @@
+
+.input-rules-box-wrapper{
+    /* border: 1px solid red; */
+    padding: 2rem;
+}
+
+.search-box-wrapper{
+    /* border: 1px solid red; */
+        display: grid;
+        /* justify-content: center; */
+       
+}
