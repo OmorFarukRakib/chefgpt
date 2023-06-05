@@ -1,0 +1,76 @@
+/* Default CSS */
+
+/* Apply box-sizing: border-box to all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding from all elements */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a default font family and font size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Add some basic styling to headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+/* Apply some default spacing between elements */
+p {
+  margin-bottom: 1em;
+}
+
+ul,
+ol {
+  margin-bottom: 1em;
+}
+
+/* Add basic styles to links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
