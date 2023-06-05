@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.chefThinking-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    z-index: 100;
+
+}
+
+.chefThinking-text{
+    font-family: 'Montserrat', cursive;
+    position: absolute;
+    /* top: 50%; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 30%;
+    font-size: 1rem;
+    text-align: center;
+}
