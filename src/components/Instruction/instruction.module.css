@@ -2,4 +2,14 @@
 
 .instruction-wrapper{
     font-family: 'Open Sans', sans-serif;
+    display: flex;
+    gap: 3px;
+    background-color: rgba(200, 61, 33, 0.246);
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.instruction-icon-wrapper{
+    line-height: 1.7;
+    color: rgb(103, 19, 11);
 }
